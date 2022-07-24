@@ -22,12 +22,13 @@ return gulp.src('source/*.{jpg,png}')
 			}))
 	   .pipe(gulp.dest('dist/'))
 	   .pipe(browserSync.reload({stream: true}))
-}); 
+});
 
 gulp.task('inlineCss', function() {
 return gulp.src('source/*.html')
  .pipe(inlineCss({
- 	removeHtmlSelectors: true
+ 	removeHtmlSelectors: true,
+ 	removeStyleTags: true
  }))
  .pipe(gulp.dest('dist/'))
  .pipe(browserSync.reload({stream: true}))
