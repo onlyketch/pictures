@@ -28,7 +28,8 @@ gulp.task('inlineCss', function() {
 return gulp.src('source/*.html')
  .pipe(inlineCss({
  	removeHtmlSelectors: true,
- 	removeStyleTags: true
+ 	removeStyleTags: true,
+ 	removeLinkTags: false
  }))
  .pipe(gulp.dest('dist/'))
  .pipe(browserSync.reload({stream: true}))
